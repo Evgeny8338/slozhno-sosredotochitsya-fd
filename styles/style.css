@@ -1,5 +1,3 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-/* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 .page {
   background-color: var(--bg-color, #000028);
   background-image: var(--bg-image);
@@ -61,6 +59,7 @@
   background: transparent;
   cursor: pointer;
   color: var(--border-color, #ff0070);
+  appearance: none;
 }
 
 .header__theme-menu-button:hover {
@@ -87,11 +86,6 @@
   position: absolute;
   right: 20px;
   top: 20px;
-}
-
-.title-decor {
-  background-color: var(--accent-color, #ff0070);
-  color: var(--subtitle-color, #000028);
 }
 
 .decor::before {
@@ -168,6 +162,11 @@
   background-color: var(--accent-color, #ff0070);
 }
 
+.title-decor {
+  background-color: var(--accent-color, #ff0070);
+  color: var(--subtitle-color, #000028);
+}
+
 .article {
   display: grid;
   gap: 10px;
@@ -227,7 +226,6 @@
   margin-block-end: 63px;
 }
 
-
 /*СЕКЦИЯ КОНЦЕНТРАЦИЯ*/
 
 .concentrate {
@@ -283,7 +281,7 @@
   font-family: var(--font-family, "IBM Plex Mono", monospace);
 }
 
-.section:last-of-type .section__image {
+.section-gallery .section__image {
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
@@ -292,30 +290,28 @@
   height: 100%;
 }
 
-.section:last-of-type .section__image:first-of-type,
-.section:last-of-type .section__image:last-of-type {
+.section-gallery .section__image:first-of-type,
+.section-gallery .section__image:last-of-type {
   grid-column: span 2;
 }
 
-.section:last-of-type .section__image:nth-of-type(2),
-.section:last-of-type .section__image:nth-of-type(3) {
+.section-gallery .section__image:nth-of-type(2),
+.section-gallery .section__image:nth-of-type(3) {
   grid-row: span 2;
 }
 
-.section:last-of-type {
+.section-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.section:first-of-type,
-.section:nth-of-type(3) {
-  display: flex;
-  flex-wrap: wrap;
+.section-article,
+.section-list {
   justify-content: space-between;
 }
 
-.section:last-of-type .section__title {
+.section-gallery .section__title {
   grid-column: 1/-1;
   width: 100%;
   margin: 0;
@@ -433,12 +429,11 @@
     margin-block-end: 50px;
   }
 
-  .section:nth-of-type(2) .section__title {
+  .section-cards .section__title {
     width: 100%;
   }
 
-  .section:nth-of-type(2) .section__article-list {
-    
+  .section-cards .section__article-list {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -447,34 +442,34 @@
     margin-block-end: 50px;
   }
 
-  .section:nth-of-type(2) .section__article-item {
+  .section-cards .section__article-item {
     flex: 1 0 auto;
     width: 103%;
   }
 
-  .section:first-of-type .section__title,
-  .section:nth-of-type(3) .section__title {
+  .section-article .section__title,
+  .section-list .section__title {
     width: 100%;
     max-width: 400px;
     margin-bottom: 20px;
   }
 
-  .section:first-of-type .section__article-list,
-  .section:nth-of-type(3) .section__article-list {
+  .section-article .section__article-list,
+  .section-list .section__article-list {
     width: 100%;
     margin-block-end: 50px;
   }
 
-  .section:last-of-type .section__image {
+  .section-gallery .section__image {
     width: 100%;
     height: auto;
   }
 
-  .section:last-of-type .section__image-container {
+  .section-gallery .section__image-container {
     width: 100px;
   }
 
-  .section:last-of-type {
+  .section-gallery {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -537,16 +532,16 @@
     margin-block-end: 80px;
   }
 
-  .section:first-of-type .section__title,
-  .section:nth-of-type(3) .section__title {
+  .section-article .section__title,
+  .section-list .section__title {
     max-width: 230px;
   }
 
-  .section:first-of-type .section__article-list,
-  .section:nth-of-type(3) .section__article-list {
+  .section-article .section__article-list,
+  .section-list .section__article-list {
     width: 64%;
   }
-  .section:nth-of-type(2) .section__article-item {
+  .section-cards .section__article-item {
     flex: 1 0 auto;
     width: 100%;
   }
