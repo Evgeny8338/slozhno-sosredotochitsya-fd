@@ -447,15 +447,13 @@
     width: 103%;
   }
 
-  .section-article .section__title,
-  .section-list .section__title {
+  .content-section__title {
     width: 100%;
     max-width: 400px;
     margin-bottom: 20px;
   }
-
-  .section-article .section__article-list,
-  .section-list .section__article-list {
+  
+  .content-section__list {
     width: 100%;
     margin-block-end: 50px;
   }
