@@ -3,10 +3,7 @@
   и их переопределение под различные устройства
 */
 :root {
-  /* Общие переменные */
   --font-family: "IBM Plex Mono", monospace;
-  
-  /* Переменные ТЁМНОЙ темы по умолчанию */
   --heading-text: #db00ff;
   --section-title-color: #ff0070;
   --bg-color: #000028;
@@ -20,7 +17,6 @@
   --secondary-color: var(--color-purple, #ff007040);
 }
 
-/* Показываем REC только для тёмной темы */
-:root:not(.theme-light) .decor {
+.decor {
   display: block;
 }
